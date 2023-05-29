@@ -15,7 +15,7 @@ const content = fs.readFileSync(path.join(
 ), 'utf-8');
 
 // BEGIN
-console.log(content)
+//console.log(content)
 let data = content.split('\r\n').slice(1);
 const creatures = data.length;
 console.log(`Видов существ в таблице: ${creatures}`);
