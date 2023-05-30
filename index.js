@@ -28,8 +28,8 @@ const content = fs.readFileSync(path.join(
 let data = content
   .split("\r\n")
   .slice(1)
-  .map((init) => init.slice(1, -1).split (' | '));//[0]-unit,[1]-power,[2]-health,[3]-qountity,[4]-height,[5]-weight,[6]-price
-
+  .map((init) => init.slice(2, -2).split (' | '));//[0]-unit,[1]-power,[2]-health,[3]-qountity,[4]-height,[5]-weight,[6]-price
+  console.log(data)
 //1 задание
 console.log(`количество существ: ${data.length}`);
 
@@ -44,12 +44,12 @@ console.log(`Стоимость 10 самых сильных: ${maxPowerPrice}\n
 let sortHeight = data.sort((a, b) => b[5] - a[5]);
 let maxHeightGroup = sortHeight[0][6] * sortHeight[0][3];
 let minHeightGroup = sortHeight.at(-1)[6] * sortHeight.at(-1)[3]
-console.log(`Самый толстый юнит:${sortHeight[0][0]} и отряд из них ${maxHeightGroup}\nсамый худой юнит${sortHeight.at(-1)[0]}: и отряд из них ${minHeightGroup}`)
+console.log(`Самый толстый юнит: ${sortHeight[0][0]} и отряд из них ${maxHeightGroup}\nсамый худой юнит: ${sortHeight.at(-1)[0]} и отряд из них ${minHeightGroup}`)
 
 //4 задание
 let newData = data.map((init) => [...init, init[6] / init[1]]);
 let sortPricePerPower = newData.sort((a, b) => b[7] - a[7]);
-console.log(`Самый невыгодный юнит:${sortPricePerPower[0][0]}\nсамый выгодный юнит${sortPricePerPower.at(-1)[0]}`);
+console.log(`Самый невыгодный юнит: ${sortPricePerPower[0][0]}\nсамый выгодный юнит: ${sortPricePerPower.at(-1)[0]}`);
 //console.log(sortPricePerPower)
 
 //5 задание
