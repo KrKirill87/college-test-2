@@ -29,7 +29,7 @@ let data = content
   .split("\r\n")
   .slice(1)
   .map((init) => init.slice(2, -2).split (' | '));//[0]-unit,[1]-power,[2]-health,[3]-qountity,[4]-height,[5]-weight,[6]-price
-  console.log(data)
+  
 //1 задание
 console.log(`количество существ: ${data.length}`);
 
